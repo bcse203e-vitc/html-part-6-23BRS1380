@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part - 6</title>
+    <style>
+      body {
+        background-image: linear-gradient(#007991, #78ffd6);
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let input = prompt(
+        "Enter a sequence of numbers separated by commas (e.g., 1,2,3,5,6):"
+      );
+      let numbers = input.split(",").map(Number);
+
+      function findMissingNumber(arr) {
+        let n = arr.length + 1;
+        let expectedSum = (n * (n + 1)) / 2;
+        let actualSum = arr.reduce((sum, num) => sum + num, 0);
+
+        return expectedSum - actualSum;
+      }
+
+      let missingNumber = findMissingNumber(numbers);
+      console.log(`The missing number is: ${missingNumber}`);
+    </script>
+  </body>
+</html>

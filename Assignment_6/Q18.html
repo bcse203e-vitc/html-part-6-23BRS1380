@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part - 6</title>
+    <style>
+      body {
+        background-image: linear-gradient(#007991, #78ffd6);
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function firstNonRepeatingChar(str) {
+        let charCount = {};
+
+        for (let char of str) {
+          charCount[char] = (charCount[char] || 0) + 1;
+        }
+
+        for (let char of str) {
+          if (charCount[char] === 1) {
+            return char;
+          }
+        }
+
+        return "No non-repeating character found.";
+      }
+
+      let input = prompt(
+        "Enter a string to find the first non-repeating character:"
+      );
+      let result = firstNonRepeatingChar(input);
+
+      console.log(`The first non-repeating character is: ${result}`);
+    </script>
+  </body>
+</html>

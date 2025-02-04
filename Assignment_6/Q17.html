@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part - 6</title>
+    <style>
+      body {
+        background-image: linear-gradient(#007991, #78ffd6);
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function decimalToBinary(decimal) {
+        if (isNaN(decimal) || decimal < 0) {
+          return "Please enter a valid non-negative number.";
+        }
+        return decimal.toString(2);
+      }
+
+      function binaryToDecimal(binary) {
+        if (!/^[01]+$/.test(binary)) {
+          return "Please enter a valid binary number (only 0s and 1s).";
+        }
+        return parseInt(binary, 2);
+      }
+
+      let choice = prompt(
+        "Choose an option:\n1. Convert Decimal to Binary\n2. Convert Binary to Decimal"
+      );
+
+      if (choice === "1") {
+        let decimalInput = prompt("Enter a decimal number:");
+        let binaryOutput = decimalToBinary(Number(decimalInput));
+        console.log(`Binary: ${binaryOutput}`);
+      } else if (choice === "2") {
+        let binaryInput = prompt("Enter a binary number:");
+        let decimalOutput = binaryToDecimal(binaryInput);
+        console.log(`Decimal: ${decimalOutput}`);
+      } else {
+        console.log("Invalid option. Please refresh and choose 1 or 2.");
+      }
+    </script>
+  </body>
+</html>

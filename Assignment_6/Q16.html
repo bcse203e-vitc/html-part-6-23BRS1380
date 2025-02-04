@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part - 6</title>
+    <style>
+      body {
+        background-image: linear-gradient(#007991, #78ffd6);
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let input = prompt(
+        "Enter numbers separated by commas (e.g., 5,3,8,1,2):"
+      );
+      let numbers = input.split(",").map(Number);
+
+      function sortAscending(arr) {
+        let n = arr.length;
+        for (let i = 0; i < n - 1; i++) {
+          for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+              let temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+        return arr;
+      }
+
+      function sortDescending(arr) {
+        let n = arr.length;
+        for (let i = 0; i < n - 1; i++) {
+          for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+              let temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+        return arr;
+      }
+
+      let ascendingOrder = sortAscending([...numbers]);
+      let descendingOrder = sortDescending([...numbers]);
+
+      console.log(`Ascending Order: ${ascendingOrder}`);
+      console.log(`Descending Order: ${descendingOrder}`);
+    </script>
+  </body>
+</html>
